@@ -1,0 +1,40 @@
+DATA:
+CODE:
+MOV A,7
+ADD A,8
+CMP A,15
+JNE error
+
+MOV A,8
+SUB A,4
+CMP A,4
+JNE error
+
+MOV A,12
+AND A,6
+CMP A,4
+JNE error
+
+MOV A,12
+OR A,6
+CMP A,14
+JNE error
+
+MOV A,12
+XOR A,6
+CMP A,10
+JNE error
+
+NOP
+NOP
+NOP
+
+fin:
+MOV A,16
+MOV B,16
+JMP fin
+
+error:
+MOV A,15
+MOV B,15
+JMP error

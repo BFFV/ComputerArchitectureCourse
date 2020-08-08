@@ -1,0 +1,29 @@
+DATA:
+
+ temp 0
+
+CODE: // Intercarmbio de registros: A -> B y B -> A
+
+MOV A,3
+MOV B,5
+
+// Usando Memoria
+MOV (temp),A
+MOV A,B
+MOV B,(temp)  
+
+// Usando Stack
+PUSH A
+MOV A,B
+POP B
+
+// Usando Solo Stack
+PUSH A
+PUSH B
+POP A
+POP B
+
+// Usando Solo Xor
+XOR A,B
+XOR B,A
+XOR A,B

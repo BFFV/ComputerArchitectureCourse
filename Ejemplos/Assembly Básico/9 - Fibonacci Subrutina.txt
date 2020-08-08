@@ -1,0 +1,35 @@
+DATA:
+
+  Fib  1       // Fibonacci N
+  FibA 0       // Fibonacci N-1
+
+CODE:
+
+JMP start 
+
+// Subrutina de intercambio de registros
+swap_reg:      // Intercambia el registro A y B
+  XOR A,B
+  XOR B,A
+  XOR A,B
+  RET
+
+// Subrutina para calcular el siguiente siguiente par de fibonacci
+fib_paso:      // recive F-1 A y F en B, y Retorna F en A y F+1 en B
+  ADD A,B       // F+1 en A
+  CALL swap_reg // Intercambia F+1 y F
+  RET
+
+start:
+ MOV A,(FibA)
+ MOV B,(Fib)   // Primer Fib
+
+ CALL fib_paso // Calcula Segundo Fib
+ CALL fib_paso // Calcula Tercer  Fib
+ CALL fib_paso // Calcula Cuarto  Fib
+
+ MOV (FibA),A
+ MOV (Fib),B
+
+end: JMP end
+  

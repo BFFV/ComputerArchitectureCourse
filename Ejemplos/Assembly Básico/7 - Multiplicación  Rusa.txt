@@ -1,0 +1,26 @@
+DATA:
+  a 6
+  b 7
+  r 0
+
+CODE: // Multiplicación Rusa
+
+loop:
+  MOV A,(a)
+  CMP A,0
+  JEQ end
+  AND A,1
+  CMP A,0
+  JEQ no_sum
+    MOV A,(r)
+    MOV B,(b)
+    ADD (r)
+  no_sum:
+  MOV A,(a)
+  SHR (a)
+  MOV A,(b)
+  SHL (b)
+  JMP loop
+  
+end:
+  JMP end

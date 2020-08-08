@@ -1,0 +1,77 @@
+﻿DATA:
+  a1 5
+    55
+    -44
+    -46
+    -15
+    -24
+    -45
+    -28
+    -34
+    44
+    -10
+    -7
+    -60
+    -43
+    10
+    -59
+    0
+    18
+    22
+    -13
+  l1 20
+                                                                        //
+//////////////////////////////////////////////////////////////////////////
+
+//! begin [inicio código alumno]
+
+/////////////////Variables Alumno/////////////////////////////////////////
+
+
+      //Definir Variables Aquí
+
+
+/////////////////Fín Variables Alumno/////////////////////////////////////
+
+CODE:
+
+  JMP main                     // Iniciar Programa
+
+//////////////////Subrutinas Alumnos//////////////////////////////////////
+
+
+      // Definir Subrutinas Aquí
+
+
+ordenar_arreglo:                // Recibe Largo en A, Puntero en B
+                
+
+      // Completar Código Aquí
+
+
+  RET
+
+
+//////////////////Fín Subrutinas Alumnos//////////////////////////////////
+
+//! end [fin código alumno]
+
+/////////////////Corrección///////////////////////////////////////////////
+end: JMP end
+main:
+  MOV A,(l1)
+  MOV B,a1
+  CALL ordenar_arreglo
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+  NOP
+  JMP end

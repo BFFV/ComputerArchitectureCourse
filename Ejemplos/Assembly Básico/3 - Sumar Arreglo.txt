@@ -1,0 +1,30 @@
+DATA:
+  dummy 0
+  arr   1
+        1
+        2
+        3
+        5
+        6
+  r     0
+CODE: // Sumar Arreglo
+
+ MOV B,arr // B = arr        //                // 1
+ ADD A,(B) // A = A + MEM[B] // A = A + MEM[1] // 1
+
+ INC B	   // B = B + 1      //                // 2
+ ADD A,(B) // A = A + MEM[B] // A = A + MEM[2] // 2
+ 
+ INC B	   // B = B + 1      //                // 3
+ ADD A,(B) // A = A + MEM[B] // A = A + MEM[3] // 4
+ 
+ INC B	   // B = B + 1      //                // 4
+ ADD A,(B) // A = A + MEM[B] // A = A + MEM[4] // 7
+ 
+ INC B	   // B = B + 1      //                // 5
+ ADD A,(B) // A = A + MEM[B] // A = A + MEM[5] // 12
+ 
+ INC B	   // B = B + 1      //                // 6
+ ADD A,(B) // A = A + MEM[B] // A = A + MEM[6] // 18
+
+ MOV (r),A // MEM[r] = A     // MEM[7] = A     // 18

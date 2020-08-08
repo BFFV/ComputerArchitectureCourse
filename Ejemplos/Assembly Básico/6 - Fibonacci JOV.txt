@@ -1,0 +1,17 @@
+DATA:
+
+  Fib  1 // Fibonacci N
+  FibA 0 // Fibonacci N-1
+
+CODE:
+
+loop:   MOV A,(Fib)  // A = MEM[Fib]   // A = MEM[0]
+        MOV B,(FibA) // B = MEM[FibA]  // B = MEM[1] 
+        MOV (FibA),A // MEM[FibA] = A  // MEM[1] = A 
+        ADD A,B      // A = A + B
+        JOV end      // Si V = 1, PC = end
+        MOV (Fib),A  // MEM[Fib]  = A  // MEM[0] = A + B
+        JMP loop     // PC = loop
+
+end:  JMP end        // PC = end
+  

@@ -1,0 +1,62 @@
+DATA:
+
+/////////////////Variables Corrección/////////////////////////////////////
+                                                                        // 
+  dummy 84
+  num_1_1         deh// Primer byte del primer número                //
+  num_1_2         4fh    // Segundo byte del primer número               //
+                                                                        // 
+  num_2_1         12h     // Primer byte del segundo número               //
+  num_2_2         eah   // Segundo byte del segundo número              //
+                                                                        // 
+  res_a           0     // Parte del resultado si es mayor o igual a 0  //
+  res_b           0     // Parte del resultado si es mayor o igual a 0  //
+                                                                        // 
+  res_c           0     // Parte del resultado si es menor a 0          //
+  res_d           0     // Parte del resultado si es menor a 0          //
+                                                                        // 
+//////////////////////////////////////////////////////////////////////////
+
+//! begin [inicio código alumno]
+
+/////////////////Variables Alumno/////////////////////////////////////////
+
+
+      //Definir Variables Aquí
+      
+
+/////////////////Fín Variables Alumno/////////////////////////////////////
+
+CODE:
+
+  JMP main
+
+special_adder:
+
+//////////////////Código Alumnos//////////////////////////////////////////
+
+
+      // Completar Código Aquí
+
+
+//////////////////Fín Código Alumnos//////////////////////////////////////
+
+//! end [fin código alumno]
+
+/////////////////Corrección///////////////////////////////////////////////
+                                                                        //
+end: JMP end                    // Fín                                  //
+                                                                        //
+main:                                                                   //
+                                                                        //
+  JMP special_adder             // Súmar                                //
+                                                                        //
+  NOP                           // Reservado para Corrección            //
+  NOP                           //                                      //
+                                                                        //
+  JMP end                       // Terminar                             //
+                                                                        //
+//////////////////////////////////////////////////////////////////////////
+
+
+

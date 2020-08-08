@@ -1,0 +1,70 @@
+﻿DATA:
+  // Variables locales para subrutina de multiplicación
+  mult_a 0
+  mult_b 0
+  mult_r 0
+
+  // Variables locales para subrutina de potencia
+  pow_b 0
+  pow_e 0
+  pow_r 0
+
+CODE: // Potencia
+
+MOV A,3
+MOV B,3
+CALL pow
+
+end: JMP end
+
+// Subrutina de potencia
+pow:               // Base A y Exponente en B, Retorna el resultado en A
+  MOV (pow_b),A
+  MOV (pow_e),B
+  PUSH B
+  MOV B,1
+  MOV (pow_r),B
+  pow_loop:
+    MOV A,(pow_e)
+    CMP A,0
+    JEQ pow_end
+    MOV A,(pow_r)
+    MOV B,(pow_b)
+    CALL mult
+    MOV (pow_r),A
+    MOV A,(pow_e)
+    SUB A,1
+    MOV (pow_e),A
+  JMP pow_loop
+  pow_end:
+  MOV A,(pow_r)
+  POP B  
+  RET
+
+// Subrutina de multiplicación
+mult:              // Operandos en A y B, Retorna el resultado en A
+  MOV (mult_a),A
+  MOV (mult_b),B
+  PUSH B
+  MOV B,0
+  MOV (mult_r),B
+  mult_loop:
+    MOV A,(mult_a)
+    CMP A,0
+    JEQ mult_end
+    AND A,1
+    CMP A,0
+    JEQ no_sum
+      MOV A,(mult_r)
+      MOV B,(mult_b)
+      ADD (mult_r)
+    no_sum:
+    MOV A,(mult_a)
+    SHR (mult_a)
+    MOV A,(mult_b)
+    SHL (mult_b)
+    JMP mult_loop 
+  mult_end:
+  MOV A,(mult_r)
+  POP B  
+  RET

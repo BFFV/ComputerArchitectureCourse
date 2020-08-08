@@ -1,0 +1,65 @@
+DATA:
+  resultado       0
+  largo_arreglo   19
+  arreglo -4
+ -1
+ -1
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+
+//! begin [inicio código alumno]
+
+/////////////////Variables Alumno/////////////////////////////////////////
+
+
+      //Definir Variables Aquí
+
+
+/////////////////Fín Variables Alumno/////////////////////////////////////
+
+CODE:
+
+  JMP main
+
+sacar_moda:
+
+//////////////////Código Alumnos//////////////////////////////////////////
+
+
+      // Completar Código Aquí
+
+
+//////////////////Fín Código Alumnos//////////////////////////////////////
+
+//! end [fin código alumno]
+
+/////////////////Corrección///////////////////////////////////////////////
+                                                                        //
+end: JMP end                    // Fín                                  //
+                                                                        //
+main:                                                                   //
+                                                                        //
+  JMP sacar_moda                //                                      //
+                                                                        //
+  NOP                           // Reservado para Corrección            //
+  NOP                           //                                      //
+  NOP                           //                                      //
+  NOP                           //                                      //
+                                                                        //
+  JMP end                       // Terminar                             //
+                                                                        //
+//////////////////////////////////////////////////////////////////////////
